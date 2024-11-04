@@ -1,10 +1,7 @@
-import { Section, Cell, Image, List, Typography, Text, Caption, Input, Button } from '@telegram-apps/telegram-ui';
+import { Section, List, Caption, Input, Button } from '@telegram-apps/telegram-ui';
 import { useState, type FC } from 'react';
 
-import { Link } from '@/components/Link/Link.tsx';
 import { Page } from '@/components/Page.tsx';
-
-import tonSvg from './ton.svg';
 
 const resStatus = [
   { color: 'blue', text: '16 и менее - Выраженный дефицит массы тела' },
@@ -49,18 +46,9 @@ export const IndexPage: FC = () => {
   return (
     <Page back={false}>
       <List>
-        {/* <Section
-          header="Test title"
-        >
-          <Cell>
-            Hello World
-          </Cell>
-        </Section> */}
-
         <Section
           header="Расчёт индекса массы тела (ИМТ)"
         >
-          {/* <Typography>Данное приложение позволит вам узнать, в какой форме вы сейчас находитесь!</Typography> */}
           <Caption>
             Данное приложение позволит вам узнать, в какой форме вы сейчас находитесь! <br />
             Для этого введите ваш рост и вес!
@@ -87,34 +75,6 @@ export const IndexPage: FC = () => {
             <p style={{color: resText?.color}}>{resText?.text}</p>
           </Caption>
         </Section>}
-
-        {/* <Section
-          header="Features"
-          footer="You can use these pages to learn more about features, provided by Telegram Mini Apps and other useful projects"
-        >
-          <Link to="/ton-connect">
-            <Cell
-              before={<Image src={tonSvg} style={{ backgroundColor: '#007AFF' }}/>}
-              subtitle="Connect your TON wallet"
-            >
-              TON Connect
-            </Cell>
-          </Link>
-        </Section>
-        <Section
-          header="Application Launch Data"
-          footer="These pages help developer to learn more about current launch information"
-        >
-          <Link to="/init-data">
-            <Cell subtitle="User data, chat information, technical data">Init Data</Cell>
-          </Link>
-          <Link to="/launch-params">
-            <Cell subtitle="Platform identifier, Mini Apps version, etc.">Launch Parameters</Cell>
-          </Link>
-          <Link to="/theme-params">
-            <Cell subtitle="Telegram application palette information">Theme Parameters</Cell>
-          </Link>
-        </Section> */}
       </List>
     </Page>
   );
